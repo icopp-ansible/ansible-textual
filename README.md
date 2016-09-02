@@ -1,0 +1,33 @@
+# ansible-textual
+
+Install Textual via the Mac App Store or Homebrew Cask.
+
+Note that if installed via the Mac App Store, the app name is "Textual 5". The actual app is the same as if installed via Homebrew Cask.
+
+## Role Variables
+
+* `prefer_mas_over_homebrew`: Defaults to `false`.
+
+## Dependencies
+
+* [icopp.mas-cli](https://github.com/icopp/ansible-mas-cli) (included as repository dependency), but only if `prefer_mas_over_homebrew` is `true`.
+* [icopp.homebrew-cask](https://github.com/icopp/ansible-homebrew-cask) (included as repository dependency), but only if `prefer_mas_over_homebrew` is `false`.
+
+## Example Playbook
+
+```
+  - hosts: all
+    roles:
+      - role: icopp.textual
+```
+
+```
+  - hosts: all
+    roles:
+      - role: icopp.textual
+        prefer_mas_over_homebrew: true
+```
+
+## License
+
+MIT

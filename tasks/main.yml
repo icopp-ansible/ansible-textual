@@ -1,0 +1,13 @@
+---
+- name: Install Textual via Mac App Store
+  command: mas install "{{ item.id }}"
+  args:
+    creates: /Applications/{{ item.name }}.app
+  with_items:
+    - { id: 896450579, name: "Textual 5" }
+  when: ansible_os_family == "Darwin" and prefer_mas_over_homebrew == true
+
+- name: Install Textual via Homebrew Cask
+  homebrew_cask:
+    name: textual
+  when: ansible_os_family == "Darwin" and prefer_mas_over_homebrew == false
