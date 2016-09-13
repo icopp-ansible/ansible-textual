@@ -2,8 +2,6 @@
 
 Install Textual via the Mac App Store or Homebrew Cask.
 
-Note that if installed via the Mac App Store, the app name is "Textual 5". The actual app is the same as if installed via Homebrew Cask.
-
 ## Role Variables
 
 * `prefer_mas_over_homebrew`: Defaults to `false`.
